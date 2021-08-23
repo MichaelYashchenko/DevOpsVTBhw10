@@ -13,4 +13,6 @@ services:
             - db
         volumes:
             - ./share:/build
-        command: sh -c "python test.py && cp data.json /build/"
+        ports:
+            - "5000:5000"
+        command: sh -c "python app.py && cp data.json /build/"
